@@ -87,8 +87,10 @@ app.get("/browser/:name", async (req, res) => {
 			passTime = nowTime - starTime;
 			console.log('passTime ' + passTime);
 		}
+		console.log('Finish！');
 		await browser.close();
 	} catch (err) {
+		console.log('Error！');
 		await browser.close();
 	}
 });
