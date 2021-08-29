@@ -61,7 +61,7 @@ app.get("/browser/:name", async (req, res) => {
 		});
 		
 		let times = 0; 
-		while(passTime < 270000 && hour > 0 && hour < 19 && times < blogArr.length){     //整个程序运行不能超过4分半钟  服务器时间在0到18小时 运行次数必须小于总网页数
+		while(passTime < 270000 && hour > 1 && hour < 20 && times < blogArr.length){     //整个程序运行不能超过4分半钟  服务器时间在0到18小时 运行次数必须小于总网页数
 			let url = blogArr[aLuanXu[times]];
 			await page.goto(url);
 			await page.waitForTimeout(15000);
