@@ -23,8 +23,9 @@ app.get("/browser/:name", async (req, res) => {
 		
 		//获取UA
 		let num = UAlist.length;
-		await console.log("共有" + num + "个UA" );	
+		//await console.log("共有" + num + "个UA" );	
 		let UAnum = Math.floor(Math.random()*num);
+		console.log(UAlist[UAnum]);
 		//获取时间
 		let date = new Date();
 		let starTime = date.getTime(); //开始的时间
@@ -79,7 +80,7 @@ app.get("/browser/:name", async (req, res) => {
 			await page.keyboard.press('Tab');
 			await page.waitForTimeout(500);
 			await page.keyboard.press('Enter');
-			console.log('点击ad'); 	
+			console.log('点击ad' + aLuanXu[times]); 	
 			await page.waitForTimeout(20000);
 			times++;
 			nowTime = new Date().getTime(); //现在的时间
