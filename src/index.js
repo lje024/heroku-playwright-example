@@ -29,9 +29,7 @@ app.get("/browser/:name", async (req, res) => {
 		//获取时间
 		let date = new Date();
 		let starTime = date.getTime(); //开始的时间
-		let hour = date.getHours();  //获取小时，用于判定是否执行脚本
 		console.log('starTime ' + starTime);
-		console.log('hour ' + hour);
 		//blog数组
 		let blogArr = ["https://khazrakh.blogspot.com/","https://sapphire2021.blogspot.com/","https://chrisroberts2.blogspot.com/","https://jondoebtc.blogspot.com/","https://ylcn63.blogspot.com/","https://pvmihalache99.blogspot.com/","https://cryptonators.blogspot.com/","https://johnwege.blogspot.com/","https://xuanling11.blogspot.com/","https://cje952021.blogspot.com/"];
 		//乱序数组 长度和blog数组相同
@@ -61,7 +59,7 @@ app.get("/browser/:name", async (req, res) => {
 		});
 		
 		let times = 0; 
-		while(passTime < 270000 && hour < 18 && times < blogArr.length){     //整个程序运行不能超过4分半钟  服务器时间在0到18小时 运行次数必须小于总网页数
+		while(passTime < 270000 && times < blogArr.length){     //整个程序运行不能超过4分半钟  运行次数必须小于总网页数
 			let url = blogArr[aLuanXu[times]];
 			await page.goto(url);
 			await page.waitForTimeout(15000);
