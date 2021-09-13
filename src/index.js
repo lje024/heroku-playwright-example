@@ -6,7 +6,7 @@ const app = express()
 app.use(express.static("./public"))
 const port = process.env.PORT || 3000;
 
-app.get("/", async (req, res) => {
+app.get("/browser/:name", async (req, res) => {
 //  const browserName = req.params["name"] || "chromium"
 // if (!["chromium", "firefox"].includes(browserName)) {
 //	return res.status(500).send(`invalid browser name (${browserName})!`)
